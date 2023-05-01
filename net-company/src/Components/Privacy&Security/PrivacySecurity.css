@@ -1,0 +1,93 @@
+.main-content-privacy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.privacy-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+#privacy-nav-bar-options ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 10%;
+  top: -2.5%;
+  gap: 60px;
+  white-space: nowrap;
+}
+
+#privacy-nav-bar-options a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#privacy-nav-bar-options a:hover {
+  border-bottom: 4px solid #fff;
+}
+
+#privacy-nav-bar-options {
+  font-family: "GDS Transport semi-bold";
+}
+
+#back-link-privacy {
+  font-family: "GDS Transport semi-bold";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: #303030;
+}
+
+#back-link-privacy:hover {
+  color: #0088ff;
+}
+
+.privacy-input-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.privacy-input-container input {
+  width: 35vw;
+}
+
+.postcode-number-privacy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postcode-number-privacy input {
+  width: 16vw;
+}
+
+.postcode-privacys,
+.NHS-numb-privacys,
+.email-privacy,
+.password-privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.submit-privacy {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  white-space: nowrap;
+}

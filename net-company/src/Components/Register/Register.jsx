@@ -12,7 +12,7 @@ export const Register = () => {
   return (
     <div className="register-container">
       <TopNav></TopNav>
-      <div className="registration-input-container">
+      <form className="registration-input-container">
         <div className="name-registration">
           <div className="first-name-registration">
             <Label htmlFor="first-name-label">First Name</Label>
@@ -46,9 +46,9 @@ export const Register = () => {
           </p>
         </div>
         <div className="submit-registration">
-          <Button>Register</Button>
+          <Button type="submit">Register</Button>
         </div>
-      </div>
+      </form>
       <Footer className="footer-register"></Footer>
     </div>
   );

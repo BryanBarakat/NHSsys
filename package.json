@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@types/styled-components": "^5.1.26",
+    "govuk-frontend": "^4.6.0",
+    "govuk-react": "^0.10.5",
+    "react-router-dom": "^6.11.0",
+    "styled-components": "^5.3.10"
+  }
+}
