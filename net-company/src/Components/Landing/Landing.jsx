@@ -1,8 +1,8 @@
 import React from "react";
 import TopNav from "@govuk-react/top-nav";
-import Footer from "@govuk-react/footer";
-import Button from "@govuk-react/Button";
+import Button from "@govuk-react/button";
 import { Link } from "react-router-dom";
+import FooterDefault from "../FooterDefault/FooterDefault";
 import "./Landing.css";
 
 export const Landing = () => {
@@ -20,7 +20,7 @@ export const Landing = () => {
           <Button>Register Now</Button>
         </Link>
       </div>
-      <Footer id="footer-landing"></Footer>
+      <FooterDefault></FooterDefault>
     </div>
   );
 };

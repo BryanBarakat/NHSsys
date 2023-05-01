@@ -1,8 +1,8 @@
 import React from "react";
-import TopNav from "@govuk-react/top-nav";
+import { NavBarDefault } from "../NavBarDefault/NavBarDefault";
 import Input from "@govuk-react/input";
-import Footer from "@govuk-react/footer";
 import Button from "@govuk-react/button";
+import FooterDefault from "../FooterDefault/FooterDefault";
 import { Link } from "react-router-dom";
 import Label from "@govuk-react/label";
 import BackLink from "@govuk-react/back-link";
@@ -11,10 +11,9 @@ import "./PrivacySecurity.css";
 export const PrivacySecurity = () => {
   return (
     <div className="privacy-container">
-      <TopNav id="privacy-nav-bar-options">
-        <Link to="">Book an Appointment</Link>
-        <Link to="">My Profile</Link>
-      </TopNav>
+      <NavBarDefault
+        children={["Book an Appointment", "My Profile"]}
+      ></NavBarDefault>
       <Link to="" className="back-link-privacy">
         <BackLink color="#303030" id="back-link-privacy"></BackLink>
       </Link>
@@ -45,7 +44,7 @@ export const PrivacySecurity = () => {
           </div>
         </div>
       </form>
-      <Footer className="privacy-footer"></Footer>
+      <FooterDefault></FooterDefault>
     </div>
   );
 };

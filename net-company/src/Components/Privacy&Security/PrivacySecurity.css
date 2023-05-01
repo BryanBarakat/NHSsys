@@ -5,12 +5,6 @@
   transform: translate(-50%, -50%);
 }
 
-.privacy-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-}
-
 #privacy-nav-bar-options ul {
   list-style: none;
   display: flex;

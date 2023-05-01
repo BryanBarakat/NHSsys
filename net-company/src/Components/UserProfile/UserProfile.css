@@ -1,0 +1,35 @@
+.main-content-user-profile {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.main-content-user-profile ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.main-content-user-profile ul a {
+  text-decoration: none;
+}
+
+.main-content-user-profile ul li {
+  font-size: 40px;
+  font-family: "GDS Transport semi-light";
+  white-space: nowrap;
+  color: black;
+}
+
+.title-profile-setting {
+  font-size: 60px;
+  font-family: "GDS Transport full-bold";
+}
+
+.main-content-user-profile ul li:hover {
+  color: #0088ff;
+  scale: 1.03;
+}

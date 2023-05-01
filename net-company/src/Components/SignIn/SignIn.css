@@ -19,12 +19,6 @@
   width: 35vw;
 }
 
-.footer-sign-in {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 #sign-in-button {
   width: fit-content;
   white-space: nowrap;

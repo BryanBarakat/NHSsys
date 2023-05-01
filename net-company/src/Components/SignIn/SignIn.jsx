@@ -6,6 +6,7 @@ import Button from "@govuk-react/button";
 import { Link } from "react-router-dom";
 import Label from "@govuk-react/label";
 import Select from "@govuk-react/select";
+import FooterDefault from "../FooterDefault/FooterDefault";
 import "./SignIn.css";
 
 export const SignIn = () => {
@@ -39,7 +40,7 @@ export const SignIn = () => {
           </Select>
         </div>
       </form>
-      <Footer className="footer-sign-in"></Footer>
+      <FooterDefault></FooterDefault>
     </div>
   );
 };

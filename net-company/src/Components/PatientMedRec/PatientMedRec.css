@@ -1,4 +1,4 @@
-.title-doc-patient-med-rec {
+.title-patient-med-rec {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,20 +9,16 @@
   white-space: nowrap;
 }
 
-.title-doc-patient-med-rec .title-doc-patient-med-rec-buttons button {
-  margin: 0;
-}
-
-.title-doc-patient-med-rec a {
+.title-patient-med-rec a {
   color: #303030;
 }
 
-.doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container a {
+.patient-med-rec-container .nav-options-patient-med-rec-container a {
   text-decoration: none;
   color: #fff;
 }
 
-.doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container ul {
+.patient-med-rec-container .nav-options-patient-med-rec-container ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -33,13 +29,11 @@
   white-space: nowrap;
 }
 
-.doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container a {
+.patient-med-rec-container .nav-options-patient-med-rec-container a {
   text-decoration: none;
   color: #fff;
 }
 
-.doc-patient-med-rec-container
-  .nav-options-doc-patient-med-rec-container
-  a:hover {
+.patient-med-rec-container .nav-options-patient-med-rec-container a:hover {
   border-bottom: 4px solid #fff;
 }

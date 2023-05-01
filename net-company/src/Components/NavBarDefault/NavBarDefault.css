@@ -1,0 +1,23 @@
+#nav-bar-default-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 10%;
+  top: -2.5%;
+  gap: 60px;
+  white-space: nowrap;
+}
+
+#nav-bar-default-container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#nav-bar-default-container a:hover {
+  border-bottom: 4px solid #fff;
+}
+
+#nav-bar-default-container {
+  font-family: "GDS Transport semi-bold";
+}

@@ -1,11 +1,10 @@
 import React from "react";
 import TopNav from "@govuk-react/top-nav";
 import Input from "@govuk-react/input";
-import Footer from "@govuk-react/footer";
+import FooterDefault from "../FooterDefault/FooterDefault";
 import Button from "@govuk-react/button";
 import { Link } from "react-router-dom";
 import Label from "@govuk-react/label";
-import Select from "@govuk-react/select";
 import "./Register.css";
 
 export const Register = () => {
@@ -49,7 +48,7 @@ export const Register = () => {
           <Button type="submit">Register</Button>
         </div>
       </form>
-      <Footer className="footer-register"></Footer>
+      <FooterDefault></FooterDefault>
     </div>
   );
 };

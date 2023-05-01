@@ -1,0 +1,46 @@
+.availabilities-patient-apps {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.available-title-patient-app h1 {
+  font-family: "GDS Transport full-light";
+}
+
+.title-patient-app-booking {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+}
+
+.doctors-date-time {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doctors-date-time #date-field {
+  font-family: "GDS Transport bold";
+  margin: 0;
+}
+
+.doctors-date-time .time-app {
+  width: 40vw;
+}
+
+.doctors-date-time label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.registration-appointment {
+  margin-top: 14px;
+}

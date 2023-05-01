@@ -1,6 +1,6 @@
 import React from "react";
-import TopNav from "@govuk-react/top-nav";
-import Footer from "@govuk-react/footer";
+import { FooterDefault } from "../FooterDefault/FooterDefault";
+import { NavBarDefault } from "../NavBarDefault/NavBarDefault";
 import Button from "@govuk-react/button";
 import { Link } from "react-router-dom";
 import BackLink from "@govuk-react/back-link";
@@ -10,11 +10,9 @@ import "./DoctorPatientMedRec.css";
 export const DoctorPatientMedRec = () => {
   return (
     <div className="doc-patient-med-rec-container">
-      <TopNav className="nav-options-doc-patient-med-rec-container">
-        <Link to="">Appointments</Link>
-        <Link to="">Medical Records</Link>
-        <Link to="">My Profile</Link>
-      </TopNav>
+      <NavBarDefault
+        children={["Appointments", "Medical Records", "My Profile"]}
+      ></NavBarDefault>
       <div className="title-doc-patient-med-rec">
         <Link to="">
           <BackLink></BackLink>
@@ -28,7 +26,7 @@ export const DoctorPatientMedRec = () => {
         </div>
       </div>
       <MedicalRecords></MedicalRecords>
-      <Footer className="footer-doc-patient-med-rec"></Footer>
+      <FooterDefault></FooterDefault>
     </div>
   );
 };
