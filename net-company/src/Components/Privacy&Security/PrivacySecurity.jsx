@@ -5,7 +5,6 @@ import Footer from "@govuk-react/footer";
 import Button from "@govuk-react/button";
 import { Link } from "react-router-dom";
 import Label from "@govuk-react/label";
-import Select from "@govuk-react/select";
 import BackLink from "@govuk-react/back-link";
 import "./PrivacySecurity.css";
 
@@ -14,7 +13,7 @@ export const PrivacySecurity = () => {
     <div className="privacy-container">
       <TopNav id="privacy-nav-bar-options">
         <Link to="">Book an Appointment</Link>
-        <Link to="">Your Profile</Link>
+        <Link to="">My Profile</Link>
       </TopNav>
       <Link to="" className="back-link-privacy">
         <BackLink color="#303030" id="back-link-privacy"></BackLink>
@@ -50,3 +49,5 @@ export const PrivacySecurity = () => {
     </div>
   );
 };
+
+export default PrivacySecurity;

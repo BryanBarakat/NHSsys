@@ -1,0 +1,51 @@
+.footer-doc-patient-med-rec {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.title-doc-patient-med-rec {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: 10vh;
+  white-space: nowrap;
+}
+
+.title-doc-patient-med-rec .title-doc-patient-med-rec-buttons button {
+  margin: 0;
+}
+
+.title-doc-patient-med-rec a {
+  color: #303030;
+}
+
+.doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 10%;
+  top: -2.5%;
+  gap: 60px;
+  white-space: nowrap;
+}
+
+.doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.doc-patient-med-rec-container
+  .nav-options-doc-patient-med-rec-container
+  a:hover {
+  border-bottom: 4px solid #fff;
+}
