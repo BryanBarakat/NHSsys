@@ -1,0 +1,62 @@
+.inputs-sign-in {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.inputs-sign-in div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#password-label-sign-in,
+#email-label-sign-in {
+  width: 35vw;
+}
+
+.footer-sign-in {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#sign-in-button {
+  width: fit-content;
+  white-space: nowrap;
+  margin-top: 50px;
+}
+
+.not-a-member-sign-in {
+  position: absolute;
+  right: 0;
+  top: 52%;
+  white-space: nowrap;
+}
+
+.not-a-member-sign-in a {
+  text-decoration: none;
+  color: #1d70b8;
+}
+
+.not-a-member-sign-in a:hover {
+  color: #0088ff;
+}
+
+.signin-container .confirm-sign-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirm-sign-in #select-sign-in {
+  width: 20vw;
+  margin-top: 20px;
+  margin-left: 380px;
+  position: absolute;
+}

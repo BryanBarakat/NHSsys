@@ -1,0 +1,62 @@
+.footer-register {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.registration-input-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.already-a-member-register a {
+  text-decoration: none;
+  color: #1d70b8;
+}
+
+.already-a-member-register a:hover {
+  color: #0088ff;
+}
+
+.registration-input-container input {
+  width: 35vw;
+}
+
+.name-registration,
+.postcode-number-registration {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.name-registration input,
+.postcode-number-registration input {
+  width: 16vw;
+}
+
+.first-name-registration,
+.last-name-registration,
+.postcode-register,
+.NHS-numb-register,
+.email-registration,
+.password-registration {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.already-a-member-register {
+  position: absolute;
+  right: 0;
+  top: 75%;
+  white-space: nowrap;
+}
+
+.submit-registration {
+  margin-top: 20px;
+}
