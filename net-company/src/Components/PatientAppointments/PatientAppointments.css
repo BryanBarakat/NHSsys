@@ -1,0 +1,34 @@
+.patient-apps-main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+#input-search-patient-apps {
+  width: 400px;
+}
+
+.patient-apps-main-content span {
+  position: absolute;
+  right: 13%;
+  background-color: #0088ff;
+  padding: 8px;
+}
+
+.patient-apps-main-content span img {
+  width: 20px;
+  height: 20px;
+}
+
+#patient-apps-back-link {
+  font-size: 20px;
+  color: #303030;
+}
+
+#patient-apps-back-link:hover {
+  color: #0088ff;
+}

@@ -14,14 +14,14 @@ export const UserProfile = () => {
         <ul>
           <h1 className="title-profile-setting">Profile Settings</h1>
           <br />
-          <Link to="">
+          <Link to="/privacy">
             <li>Privacy and Security</li>
           </Link>
-          <Link to="">
+          <Link to="/patient-appointments-lis">
             {" "}
             <li>View GP Appointments</li>
           </Link>
-          <Link to="">
+          <Link to="/patient-medical-records">
             <li>View Medical Records</li>
           </Link>
         </ul>

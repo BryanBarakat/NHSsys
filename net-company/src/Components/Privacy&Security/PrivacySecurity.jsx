@@ -14,7 +14,7 @@ export const PrivacySecurity = () => {
       <NavBarDefault
         children={["Book an Appointment", "My Profile"]}
       ></NavBarDefault>
-      <Link to="" className="back-link-privacy">
+      <Link to="/profile" className="back-link-privacy">
         <BackLink color="#303030" id="back-link-privacy"></BackLink>
       </Link>
       <form className="main-content-privacy">

@@ -7,6 +7,10 @@ import DoctorPatientMedRec from "../src/Components/DoctorPatientMedRec/DoctorPat
 import { UserProfile } from "../src/Components/UserProfile/UserProfile";
 import PatientMedRec from "../src/Components/PatientMedRec/PatientMedRec";
 import { PatientAppointmentBooking } from "../src/Components/PatientAppointmentBooking/PatientAppointmentBooking";
+import DoctorAppointments from "../src/Components/DoctorAppointments/DoctorAppointments";
+import PatientAppointments from "../src/Components/PatientAppointments/PatientAppointments";
+import AdminAppointments from "../src/Components/AdminAppointments/AdminAppointments";
+import DoctorPatientMedRecMain from "../src/Components/DoctorPatientMedRecMain/DoctorPatientMedRecMain";
 
 export const routes = (
   <BrowserRouter>
@@ -17,8 +21,24 @@ export const routes = (
       <Route path="/privacy" element={<PrivacySecurity />}></Route>
       <Route path="/profile" element={<UserProfile />}></Route>
       <Route
+        path="/doctor-appointments-list"
+        element={<DoctorAppointments />}
+      ></Route>
+      <Route
+        path="/patient-appointments-list"
+        element={<PatientAppointments />}
+      ></Route>
+      <Route
+        path="/admin-appointments-list"
+        element={<AdminAppointments />}
+      ></Route>
+      <Route
         path="/patient-appointment-booking"
         element={<PatientAppointmentBooking />}
+      ></Route>
+      <Route
+        path="/doctor-patient-medical-records-main"
+        element={<DoctorPatientMedRecMain />}
       ></Route>
       <Route
         path="/doctor-patient-medical-records"

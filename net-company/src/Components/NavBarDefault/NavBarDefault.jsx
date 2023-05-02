@@ -7,8 +7,12 @@ export const NavBarDefault = ({ children }) => {
   return (
     <div>
       <TopNav id="nav-bar-default-container">
-        {children.map((el) => {
-          return <Link to="">{el}</Link>;
+        {children.map((el, index) => {
+          return (
+            <Link key={index} to="">
+              {el}
+            </Link>
+          );
         })}
       </TopNav>
     </div>

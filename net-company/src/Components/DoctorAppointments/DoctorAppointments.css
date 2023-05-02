@@ -1,0 +1,29 @@
+body {
+  overflow: hidden;
+}
+
+.doctors-apps-main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+#input-search-doctors-apps {
+  width: 400px;
+}
+
+.doctors-apps-main-content span {
+  position: absolute;
+  right: 13%;
+  background-color: #0088ff;
+  padding: 8px;
+}
+
+.doctors-apps-main-content span img {
+  width: 20px;
+  height: 20px;
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import TopNav from "@govuk-react/top-nav";
 import Input from "@govuk-react/input";
-import Footer from "@govuk-react/footer";
 import Button from "@govuk-react/button";
 import { Link } from "react-router-dom";
 import Label from "@govuk-react/label";

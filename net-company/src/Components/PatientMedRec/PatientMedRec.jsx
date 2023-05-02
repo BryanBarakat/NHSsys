@@ -11,7 +11,7 @@ export const PatientMedRec = () => {
     <div className="patient-med-rec-container">
       <NavBarDefault children={["Appointments", "My Profile"]}></NavBarDefault>
       <div className="title-patient-med-rec">
-        <Link to="">
+        <Link to="/profile">
           <BackLink></BackLink>
         </Link>
         <div className="title-patient-med-rec-header">
