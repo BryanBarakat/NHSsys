@@ -18,8 +18,8 @@ export const routes = (
       <Route path="/" element={<Landing />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="/register" element={<Register />}></Route>
-      <Route path="/privacy" element={<PrivacySecurity />}></Route>
-      <Route path="/profile" element={<UserProfile />}></Route>
+      <Route path="/privacy/:id" element={<PrivacySecurity />}></Route>
+      <Route path="/profile/:id" element={<UserProfile />}></Route>
       <Route
         path="/doctor-appointments-list"
         element={<DoctorAppointments />}

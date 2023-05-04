@@ -1,0 +1,33 @@
+.error-msg-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 50px;
+  background-color: bisque;
+  border: 2px solid black;
+  white-space: nowrap;
+}
+
+.error-msg-container h1 img {
+  width: 38px;
+  height: 38px;
+  vertical-align: middle;
+}
+
+.error-msg-container .close-tab img {
+  width: 26px;
+  height: 26px;
+}
+
+.error-msg-container .close-tab {
+  position: absolute;
+  top: 6%;
+  right: 2%;
+  cursor: pointer;
+}
+
+.error-msg-container h1 {
+  font-size: 30px;
+}

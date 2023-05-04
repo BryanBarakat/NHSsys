@@ -21,6 +21,37 @@
   width: 35vw;
 }
 
+label span {
+  color: red;
+}
+
+.registration-input-container label {
+  display: inline;
+}
+
+/* #error-summary {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0088ff;
+  width: 60vw;
+  text-align: center;
+} */
+
+#date-registration {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  user-select: none;
+}
+
+input[type="date"] {
+  border: 2px solid black;
+}
+
 .name-registration,
 .postcode-number-registration {
   display: flex;
@@ -48,7 +79,7 @@
 .already-a-member-register {
   position: absolute;
   right: 0;
-  top: 75%;
+  top: 79%;
   white-space: nowrap;
 }
 
