@@ -31,17 +31,17 @@ switch($method) {
         $patient_password = $data->password_label_sign_in;
 
         // Check if user exists
-        $stmt = $conn->prepare("SELECT patient_id, patient_first_name, patient_last_name, patient_email, patient_password, patient_date_of_birth,patient_postcode,patient_nhs_number FROM patient WHERE patient_email = ?");
+        $stmt = $conn->prepare("SELECT * FROM patient WHERE Email = ?");
         $stmt->bind_param("s", $patient_email);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        $stmt2 = $conn->prepare("SELECT doctor_id, doctor_first_name, doctor_last_name, doctor_email, doctor_password FROM doctor WHERE doctor_email = ?");
+        $stmt2 = $conn->prepare("SELECT * FROM doctor WHERE doctor_email = ?");
         $stmt2->bind_param("s", $patient_email);
         $stmt2->execute();
         $result2 = $stmt2->get_result();
 
-        $stmt3 = $conn->prepare("SELECT admin_id, admin_first_name, admin_last_name, admin_password, admin_email FROM admin WHERE admin_email = ?");
+        $stmt3 = $conn->prepare("SELECT * FROM admin WHERE admin_email = ?");
         $stmt3->bind_param("s", $patient_email);
         $stmt3->execute();
         $result3 = $stmt3->get_result();
@@ -54,16 +54,19 @@ switch($method) {
         } else {
             if($result->num_rows != 0){
                 $row = $result->fetch_assoc();
-                $stored_password = $row['patient_password'];
+                $stored_password = $row['Password'];
                 $_SESSION['patient_id'] = $row['patient_id'];
-                $_SESSION['patient_first_name'] = $row['patient_first_name'];
-                $_SESSION['patient_last_name'] = $row['patient_last_name'];
-                $_SESSION['patient_email'] = $row['patient_email'];
-                $_SESSION['patient_date_of_birth'] = $row['patient_date_of_birth'];
-                $response = ['status' => 1, 'message' => 'Login successful.', 'patient_id' => $_SESSION['patient_id'], 'patient_first_name' => $_SESSION['patient_first_name'],
+                $_SESSION['patient_password'] = $row['Password'];
+                $_SESSION['patient_first_name'] = $row['Forename'];
+                $_SESSION['patient_first_name'] = $row['Forename'];
+                $_SESSION['patient_last_name'] = $row['Surname'];
+                $_SESSION['patient_email'] = $row['Email'];
+                $_SESSION['patient_date_of_birth'] = $row['PersonDOB'];
+                $_SESSION['user_type'] = $row['user_type'];
+                $response = ['status' => 1, 'message' => 'Login successful.', 'patient_id' => $_SESSION['patient_id'], 'patient_first_name' => $row['Forename'],
                 'patient_last_name' => $_SESSION['patient_last_name'],
-                'patient_email' => $_SESSION['patient_email'],'patient_postcode' => $row['patient_postcode'],'patient_nhs_number' => $row['patient_nhs_number'],
-                'patient_date_of_birth' => $_SESSION['patient_date_of_birth'],'patient_password' => $row['patient_password'], $_SESSION['patient_id']];
+                'patient_email' => $_SESSION['patient_email'],'patient_postcode' => $row['Postcode'],'patient_nhs_number' => $row['NHSNumber'],
+                'patient_date_of_birth' => $row['PersonDOB'],'patient_password' => $row['Password'], 'user_type' => $_SESSION["user_type"]];
             }
             elseif($result2->num_rows != 0){
                 $row = $result2->fetch_assoc();
@@ -72,9 +75,10 @@ switch($method) {
                 $_SESSION['doctor_first_name'] = $row['doctor_first_name'];
                 $_SESSION['doctor_last_name'] = $row['doctor_last_name'];
                 $_SESSION['doctor_email'] = $row['doctor_email'];
+                $_SESSION['user_type'] = $row['user_type'];
                 $response = ['status' => 1, 'message' => 'Login successful.', 'patient_id' => $row['doctor_id'], 'patient_first_name' => $row['doctor_first_name'],
                 'patient_last_name' => $row['doctor_last_name'],
-                'patient_email' => $row['doctor_email'],'patient_password' => $row['doctor_password']];
+                'patient_email' => $row['doctor_email'],'patient_password' => $row['doctor_password'], 'user_type' => $_SESSION["user_type"]];
             }
             elseif($result3->num_rows != 0){
                 $row = $result3->fetch_assoc();
@@ -83,12 +87,13 @@ switch($method) {
                 $_SESSION['admin_first_name'] = $row['admin_first_name'];
                 $_SESSION['admin_last_name'] = $row['admin_last_name'];
                 $_SESSION['admin_email'] = $row['admin_email'];
+                $_SESSION['user_type'] = $row['user_type'];
                 $response = ['status' => 1, 'message' => 'Login successful.', 'patient_id' => $row['admin_id'], 'patient_first_name' => $row['admin_first_name'],
                 'patient_last_name' => $row['admin_last_name'],
-                'patient_email' => $row['admin_email'],'patient_password' => $row['admin_password']];
+                'patient_email' => $row['admin_email'],'patient_password' => $row['admin_password'], 'user_type' => $_SESSION["user_type"]];
             }
             // Verify password
-            if (!password_verify($patient_password, $stored_password)) {
+            if (($result -> num_rows != 0 && !password_verify($patient_password,$stored_password)) || (($result2-> num_rows != 0 || $result3-> num_rows != 0) && $patient_password != $stored_password)) {
                 // Incorrect password
                 $response = ['status' => 0, 'message' => 'Invalid login credentials.'];
                 session_destroy();
@@ -96,13 +101,6 @@ switch($method) {
             echo json_encode($response);
             break;
         }
-    case "GET":
-        $id = $_SESSION['patient_id'];
-        $query_string = "SELECT patient_id FROM patient WHERE patient_email = '$id'";
-        $query = mysqli_query($conn,$query_string);
-        $row = mysqli_fetch_assoc($query);
-        $_SESSION['patient_id'] = $row['patient_id'];
-        echo json_encode($_SESSION['patient_id']);
-}
+    }
 mysqli_close($conn);
 ?>
