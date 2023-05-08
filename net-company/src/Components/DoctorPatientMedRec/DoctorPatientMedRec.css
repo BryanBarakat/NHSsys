@@ -3,10 +3,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 14vw;
+  margin-right: 14vw;
   margin-top: 10vh;
   white-space: nowrap;
+}
+
+.title-doc-patient-med-rec .title-doc-patient-med-rec-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .title-doc-patient-med-rec .title-doc-patient-med-rec-buttons button {
@@ -15,11 +21,17 @@
 
 .title-doc-patient-med-rec a {
   color: #303030;
+  font-size: 22px;
 }
 
 .doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container a {
   text-decoration: none;
   color: #fff;
+}
+
+.title-doc-patient-med-rec-header {
+  max-width: 50vw;
+  white-space: normal;
 }
 
 .doc-patient-med-rec-container .nav-options-doc-patient-med-rec-container ul {

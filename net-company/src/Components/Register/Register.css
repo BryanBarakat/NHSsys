@@ -29,6 +29,18 @@ label span {
   display: inline;
 }
 
+.gender-registration {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.gender-registration select {
+  border: 2px solid black;
+  padding: 10px;
+  font-size: large;
+}
+
 /* #error-summary {
   position: absolute;
   left: 50%;
@@ -73,13 +85,13 @@ input[type="date"] {
 .password-registration {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 1px;
 }
 
 .already-a-member-register {
   position: absolute;
   right: 0;
-  top: 79%;
+  top: 81%;
   white-space: nowrap;
 }
 

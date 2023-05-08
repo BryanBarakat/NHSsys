@@ -1,20 +1,8 @@
 .medical-recs-container {
   position: absolute;
-  bottom: -5%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 60vw;
-  border-right: 26px solid #0088ff;
-  border-bottom: 22px solid #0088ff;
-  border-radius: 5px;
-  background-color: #1d70b8;
-  /* color: #fff; */
-  padding: 80px;
 }
 
 .input-med-recs {
@@ -32,12 +20,23 @@
   gap: 5px;
 }
 
-.health-conditions-med-recs {
-  text-align: center;
-  width: 600px;
-  white-space: normal;
+.health-conditions-med-recs table {
+  font-family: "GDS Transport full-light";
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+  font-size: 8px;
 }
 
-.health-conditions-med-recs span {
-  font-family: "GDS Transport full-light";
+.health-conditions-med-recs table th,
+.health-conditions-med-recs table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.health-conditions-med-recs table th {
+  background-color: #0088ff;
+  font-weight: bold;
 }

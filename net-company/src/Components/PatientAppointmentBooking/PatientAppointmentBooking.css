@@ -21,19 +21,46 @@
   font-size: 60px;
 }
 
+.doctors-app {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctors-app select {
+  width: 31.5vw;
+  border: 2px solid black;
+  font-size: 16px;
+  padding: 8px;
+}
+
 .doctors-date-time {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.doctors-date-time input {
+  font-family: "GDS Transport full-bold";
+  font-weight: bold;
+}
+
+.doctors-date-time .date-app {
+  display: flex;
+  flex-direction: column;
+}
+
 .doctors-date-time #date-field {
-  font-family: "GDS Transport bold";
+  font-family: "GDS Transport semi-bold";
   margin: 0;
+  padding: 10px;
+  border: 2px solid black;
+  width: 30vw;
 }
 
 .doctors-date-time .time-app {
-  width: 40vw;
+  width: 30vw;
+  padding: 10px;
+  border: 2px solid black;
 }
 
 .doctors-date-time label {

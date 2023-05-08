@@ -32,6 +32,10 @@
   white-space: nowrap;
 }
 
+.patient-type {
+  display: none;
+}
+
 .not-a-member-sign-in a {
   text-decoration: none;
   color: #1d70b8;

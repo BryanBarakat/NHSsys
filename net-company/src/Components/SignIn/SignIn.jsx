@@ -4,7 +4,6 @@ import Input from "@govuk-react/input";
 import Button from "@govuk-react/button";
 import { Link, useNavigate } from "react-router-dom";
 import Label from "@govuk-react/label";
-import Select from "@govuk-react/select";
 import FooterDefault from "../FooterDefault/FooterDefault";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import axios from "axios";
@@ -44,8 +43,31 @@ export const SignIn = () => {
         .then((response) => {
           if (response.data.message == "Login successful.") {
             setUserId(response.data.patient_id); // set the user ID here
-            history(`/profile/${response.data.patient_id}`); // use the response data directly
+            localStorage.setItem("id_user", response.data.patient_id);
+            localStorage.setItem("user_type", response.data.user_type);
+            localStorage.setItem("user_email", response.data.patient_email);
+            localStorage.setItem(
+              "user_dob",
+              response.data.patient_date_of_birth
+            );
+            localStorage.setItem(
+              "user_fullname",
+              `${response.data.patient_first_name} ${response.data.patient_last_name}`
+            );
+            localStorage.setItem(
+              "user_nhs_number",
+              response.data.patient_nhs_number
+            );
+            localStorage.setItem(
+              "user_postcode",
+              response.data.patient_postcode
+            );
+            localStorage.setItem(
+              "user_password",
+              response.data.patient_password
+            );
             console.log(response);
+            history(`/profile/${response.data.patient_id}`); // use the response data directly
           } else {
             console.log(response);
             setWarning(true);
@@ -85,6 +107,7 @@ export const SignIn = () => {
             Not a Member? <Link to="/register"> Sign Up</Link>
           </p>
         </div>
+        <Input className="patient-type" name="user_type"></Input>
         <div className="confirm-sign-in">
           <Button type="submit" id="sign-in-button">
             Sign In

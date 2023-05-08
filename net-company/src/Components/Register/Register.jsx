@@ -19,8 +19,14 @@ export const Register = () => {
     NHS_label: "",
     date_of_birth: "",
     pass_reg_label: "",
+    patient_gender: "Male",
+    patient_type: "patient",
   });
   const [Warning, setWarning] = useState(false);
+
+  const [warningMessage, setWarningMessage] = useState(
+    "Please fill in the required fields"
+  );
 
   const handleChange = (e) => {
     setRegistration({ ...Registration, [e.target.name]: e.target.value });
@@ -40,6 +46,7 @@ export const Register = () => {
       NHS_label: Registration.NHS_label,
       date_of_birth: Registration.date_of_birth.split(" ").reverse().join(" "),
       pass_reg_label: Registration.pass_reg_label,
+      patient_gender: Registration.patient_gender,
     };
 
     if (
@@ -48,7 +55,8 @@ export const Register = () => {
       data.email_reg_label &&
       (data.postcode_label || data.NHS_label) &&
       data.pass_reg_label &&
-      data.date_of_birth
+      data.date_of_birth &&
+      data.patient_gender
     ) {
       axios
         .post("http://localhost/PHP/Enquiry/signup.php", data)
@@ -58,6 +66,7 @@ export const Register = () => {
             console.log(response);
           } else {
             console.log(response);
+            setWarningMessage(response.data.message);
             setWarning(true);
           }
         })
@@ -136,6 +145,20 @@ export const Register = () => {
             max="2023-1-1"
           />
         </div>
+        <div className="gender-registration">
+          <label htmlFor="gender-retrieval">
+            Gender <span>*</span>
+          </label>
+          <select
+            onChange={(e) => handleChange(e)}
+            value={Registration.patient_gender}
+            name="patient_gender"
+            id="gender-retrieval"
+          >
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
         <div className="email-registration">
           <Label htmlFor="email_reg_label">
             Email Address <span>*</span>
@@ -167,10 +190,7 @@ export const Register = () => {
         </div>
       </form>
       {Warning && (
-        <ErrorMessage
-          onClick={handleWarning}
-          message={"Please fill in the required details in the correct format"}
-        />
+        <ErrorMessage onClick={handleWarning} message={warningMessage} />
       )}
       <FooterDefault></FooterDefault>
     </div>

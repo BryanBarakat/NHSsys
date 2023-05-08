@@ -2,42 +2,93 @@ import React, { useState, useEffect } from "react";
 import NavBarDefault from "../NavBarDefault/NavBarDefault";
 import FooterDefault from "../FooterDefault/FooterDefault";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./UserProfile.css";
 
 export const UserProfile = () => {
   const [userId, setUserId] = useState("");
+  const current_user = localStorage.getItem("user_type");
+  const k = localStorage.getItem("id_user");
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost/PHP/enquiry/profile.php/${k}`)
+  //     .then((response) => {
+  //       setUserId(response.data.patient_id);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost/PHP/enquiry/profile.php")
+      .get(`http://localhost/PHP/enquiry/test.php`)
       .then((response) => {
-        console.log(response);
-        setUserId(response.data.patient_id);
+        // setUserId(response.data.patient_id);
+        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  });
 
   return (
     <div>
-      <NavBarDefault
-        children={["Book an Appointment", "My Profile"]}
-      ></NavBarDefault>
+      {current_user == "patient" && (
+        <NavBarDefault
+          children={["Book an Appointment", "My Profile"]}
+          links={[`/patient-appointment-booking/${k}`, `/profile/${k}`]}
+        ></NavBarDefault>
+      )}
+      {current_user == "doctor" && (
+        <NavBarDefault
+          children={["Appointments", "Medical Records", "My Profile"]}
+          links={[
+            `/doctor-appointments-list/${k}`,
+            `/doctor-patient-medical-records-main/${k}`,
+            `/profile/${k}`,
+          ]}
+        ></NavBarDefault>
+      )}
+      {current_user == "admin" && (
+        <NavBarDefault
+          children={["Appointments", "My Profile"]}
+          links={[`/admin-appointments-list/${k}`, `/profile/${k}`]}
+        ></NavBarDefault>
+      )}
       <div className="main-content-user-profile">
         <ul>
           <h1 className="title-profile-setting">Profile Settings</h1>
           <br />
-          <Link to={`/privacy/${userId}`}>
+          <Link to={`/privacy/${k}`}>
             <li>Privacy and Security</li>
           </Link>
-          <Link to={`/patient-appointments-lis/${userId}`}>
-            {" "}
-            <li>View GP Appointments</li>
-          </Link>
-          <Link to={`/patient-medical-records/${userId}`}>
-            <li>View Medical Records</li>
+          {current_user == "patient" && (
+            <Link to={`/patient-appointments-list/${k}`}>
+              {" "}
+              <li>View GP Appointments</li>
+            </Link>
+          )}
+          {current_user == "doctor" && (
+            <Link to={`/doctor-appointments-list/${k}`}>
+              {" "}
+              <li>View GP Appointments</li>
+            </Link>
+          )}
+          {current_user == "admin" && (
+            <Link to={`/admin-appointments-list/${k}`}>
+              {" "}
+              <li>View GP Appointments</li>
+            </Link>
+          )}
+          {current_user == "patient" && (
+            <Link to={`/patient-medical-records/${k}`}>
+              <li>View Medical Records</li>
+            </Link>
+          )}
+          <Link to={`/signin`}>
+            <li>Sign Out</li>
           </Link>
         </ul>
       </div>

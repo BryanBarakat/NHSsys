@@ -21,31 +21,31 @@ export const routes = (
       <Route path="/privacy/:id" element={<PrivacySecurity />}></Route>
       <Route path="/profile/:id" element={<UserProfile />}></Route>
       <Route
-        path="/doctor-appointments-list"
+        path="/doctor-appointments-list/:id"
         element={<DoctorAppointments />}
       ></Route>
       <Route
-        path="/patient-appointments-list"
+        path="/patient-appointments-list/:id"
         element={<PatientAppointments />}
       ></Route>
       <Route
-        path="/admin-appointments-list"
+        path="/admin-appointments-list/:id"
         element={<AdminAppointments />}
       ></Route>
       <Route
-        path="/patient-appointment-booking"
+        path="/patient-appointment-booking/:id"
         element={<PatientAppointmentBooking />}
       ></Route>
       <Route
-        path="/doctor-patient-medical-records-main"
+        path="/doctor-patient-medical-records-main/:id"
         element={<DoctorPatientMedRecMain />}
       ></Route>
       <Route
-        path="/doctor-patient-medical-records"
+        path="/doctor-patient-medical-records/:id"
         element={<DoctorPatientMedRec />}
       ></Route>
       <Route
-        path="/patient-medical-records"
+        path="/patient-medical-records/:id"
         element={<PatientMedRec />}
       ></Route>
     </Routes>

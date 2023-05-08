@@ -16,8 +16,9 @@ export const TableDefault = ({ objects, listOfObjects }) => {
               <td>{val.patient}</td>
               {val.doctor && <td>{val.doctor}</td>}
               {val.DateandTime && <td>{val.DateandTime}</td>}
+              {val.NHSnumber && val.postcode && <td>{val.NHSnumber}</td>}
+              {!val.postcode && val.NHSnumber && <td>{val.NHSnumber}</td>}
               {val.postcode && !val.NHSnumber && <td>{val.postcode}</td>}
-              {val.NHSnumber && !val.postcode && <td>{val.NHSnumber}</td>}
               <td>{val.cancel}</td>
             </tr>
           );
