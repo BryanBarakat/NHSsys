@@ -3,14 +3,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
   margin-top: 10vh;
   white-space: nowrap;
 }
 
 .title-patient-med-rec a {
   color: #303030;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .patient-med-rec-container .nav-options-patient-med-rec-container a {

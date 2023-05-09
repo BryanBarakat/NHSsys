@@ -1,7 +1,55 @@
+/* Produced by Bryan Naoum Barakat student w18484023 */
+
 .main-landing-content {
   position: absolute;
   left: 35%;
   top: 47%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: #1d70b8;
+  padding: 80px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-right: 30px solid #0088ff;
+  border-bottom: 26px solid #0088ff;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+}
+
+.block-landing {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: #1d70b8;
+  padding: 80px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-right: 30px solid #0088ff;
+  border-bottom: 26px solid #0088ff;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+}
+.block-landing2 {
+  position: absolute;
+  right: 10%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: #1d70b8;
+  padding: 80px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-right: 30px solid #0088ff;
+  border-bottom: 26px solid #0088ff;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+}
+.block-landing3 {
+  position: absolute;
+  right: 12%;
+  top: 30%;
   transform: translate(-50%, -50%);
   color: #fff;
   background-color: #1d70b8;

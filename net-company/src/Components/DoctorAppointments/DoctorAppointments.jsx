@@ -6,18 +6,25 @@ import FooterDefault from "../FooterDefault/FooterDefault";
 import Input from "@govuk-react/input";
 import axios from "axios";
 import SearchLogo from "../../assets/searchImg.png";
+import ErrorSummary from "@govuk-react/error-summary";
 import "./DoctorAppointments.css";
 
 export const DoctorAppointments = () => {
   const key = localStorage.getItem("id_user");
   const current_user = localStorage.getItem("user_type");
+  const curr_email_user = localStorage.getItem("user_email");
   const [apps, setApps] = useState([]);
 
   useEffect(() => {
     axios
-      .post("http://localhost/PHP/enquiry/view_appointments.php")
+      .post("http://localhost/PHP/enquiry/view_appointments.php", {
+        data: [current_user, curr_email_user],
+      })
       .then((response) => {
-        setApps(response.data.appointments);
+        if (response.data.appointments) {
+          setApps(response.data.appointments);
+        }
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -59,35 +66,39 @@ export const DoctorAppointments = () => {
           <img src={SearchLogo}></img>
         </span>
       </div>
-      <TableDefault
-        objects={["Patient", "Date and Time", ""]}
-        listOfObjects={
-          apps != []
-            ? apps.map((el, index) => ({
-                patient: `${el.patient_first_name} ${el.patient_last_name}`,
-                DateandTime: `${el.appointment_date}  at  ${el.appointment_time}`,
-                cancel: (
-                  <React.Fragment>
-                    <Button
-                      type="button"
-                      key={index}
-                      onClick={() =>
-                        handleSubmit(
-                          `${el.doctor_first_name}`,
-                          `${el.doctor_last_name}`,
-                          `${el.appointment_date}`,
-                          `${el.appointment_time}`
-                        )
-                      }
-                    >
-                      Cancel
-                    </Button>
-                  </React.Fragment>
-                ),
-              }))
-            : ["NO appointments at the moment"]
-        }
-      ></TableDefault>
+      {apps.length > 0 ? (
+        <TableDefault
+          objects={["Patient", "Date and Time", ""]}
+          listOfObjects={apps.map((el, index) => ({
+            patient: `${el.patient_first_name} ${el.patient_last_name}`,
+            DateandTime: `${el.appointment_date}  at  ${el.appointment_time}`,
+            cancel: (
+              <React.Fragment>
+                <Button
+                  type="button"
+                  key={index}
+                  onClick={() =>
+                    handleSubmit(
+                      `${el.doctor_first_name}`,
+                      `${el.doctor_last_name}`,
+                      `${el.appointment_date}`,
+                      `${el.appointment_time}`
+                    )
+                  }
+                >
+                  Cancel
+                </Button>
+              </React.Fragment>
+            ),
+          }))}
+        ></TableDefault>
+      ) : (
+        <ErrorSummary
+          id="error-sum"
+          heading="There are no Appointments scheduled"
+          description="Wait for new customers to schedule appointments."
+        />
+      )}
       <FooterDefault></FooterDefault>
     </div>
   );

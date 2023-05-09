@@ -1,0 +1,95 @@
+.vaccine-row-container {
+  position: absolute;
+  z-index: 10;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 100px;
+  background-color: #f7f7f7;
+  border: 2px solid #2e6da4;
+  border-radius: 10px;
+  width: 60vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vaccine-row-container form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 50vh;
+  width: 100%;
+  align-items: center;
+}
+
+.vaccine-row-container .submit-vacc {
+  margin-top: 20px;
+}
+
+.vaccine-row-container form input {
+  width: 10vw;
+  height: 4vh;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  margin-right: 20px;
+  font-size: 1rem;
+}
+
+.vaccine-row-container form .row {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.vaccine-row-container form .row label {
+  flex-basis: 45%;
+  width: 2vw;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.vaccine-row-container form .row input {
+  flex-basis: 45%;
+}
+
+.close-tab-vacc {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.close-tab-vacc img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.submit-vacc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-vacc button {
+  background-color: #2e6da4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-vacc button:hover {
+  background-color: #1c4d74;
+}

@@ -2,31 +2,18 @@ import React, { useState, useEffect } from "react";
 import NavBarDefault from "../NavBarDefault/NavBarDefault";
 import FooterDefault from "../FooterDefault/FooterDefault";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./UserProfile.css";
 
 export const UserProfile = () => {
-  const [userId, setUserId] = useState("");
   const current_user = localStorage.getItem("user_type");
   const k = localStorage.getItem("id_user");
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost/PHP/enquiry/profile.php/${k}`)
-  //     .then((response) => {
-  //       setUserId(response.data.patient_id);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
 
   useEffect(() => {
     axios
       .get(`http://localhost/PHP/enquiry/test.php`)
       .then((response) => {
-        // setUserId(response.data.patient_id);
-        // console.log(response.data);
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);

@@ -6,16 +6,20 @@ import FooterDefault from "../FooterDefault/FooterDefault";
 import BackLink from "@govuk-react/back-link";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ErrorSummary from "@govuk-react/error-summary";
 import "./PatientAppointments.css";
 
 export const PatientAppointments = () => {
   const key = localStorage.getItem("id_user");
   const current_user = localStorage.getItem("user_type");
+  const curr_email_user = localStorage.getItem("user_email");
   const [apps, setApps] = useState([]);
 
   useEffect(() => {
     axios
-      .post("http://localhost/PHP/enquiry/view_appointments.php")
+      .post("http://localhost/PHP/enquiry/view_appointments.php", {
+        data: [current_user, curr_email_user],
+      })
       .then((response) => {
         console.log(response.data);
         setApps(response.data.appointments);
@@ -46,40 +50,44 @@ export const PatientAppointments = () => {
         links={[`/patient-appointment-booking/${key}`, `/profile/${key}`]}
       ></NavBarDefault>
       <div className="patient-apps-main-content">
-        <h1>Appointments</h1>
         <Link to={`/profile/${key}`}>
           <BackLink id="patient-apps-back-link"></BackLink>
         </Link>
+        <h1>Appointments</h1>
       </div>
-      <TableDefault
-        objects={["Doctor", "Date and Time", ""]}
-        listOfObjects={
-          apps != []
-            ? apps.map((el, index) => ({
-                patient: `${el.doctor_first_name} ${el.doctor_last_name}`,
-                DateandTime: `${el.appointment_date}  at  ${el.appointment_time}`,
-                cancel: (
-                  <React.Fragment>
-                    <Button
-                      type="button"
-                      key={index}
-                      onClick={() =>
-                        handleSubmit(
-                          `${el.doctor_first_name}`,
-                          `${el.doctor_last_name}`,
-                          `${el.appointment_date}`,
-                          `${el.appointment_time}`
-                        )
-                      }
-                    >
-                      Cancel
-                    </Button>
-                  </React.Fragment>
-                ),
-              }))
-            : ["NO appointments at the moment"]
-        }
-      ></TableDefault>
+      {apps.length > 0 ? (
+        <TableDefault
+          objects={["Doctor", "Date and Time", ""]}
+          listOfObjects={apps.map((el, index) => ({
+            patient: `${el.doctor_first_name} ${el.doctor_last_name}`,
+            DateandTime: `${el.appointment_date}  at  ${el.appointment_time}`,
+            cancel: (
+              <React.Fragment>
+                <Button
+                  type="button"
+                  key={index}
+                  onClick={() =>
+                    handleSubmit(
+                      `${el.doctor_first_name}`,
+                      `${el.doctor_last_name}`,
+                      `${el.appointment_date}`,
+                      `${el.appointment_time}`
+                    )
+                  }
+                >
+                  Cancel
+                </Button>
+              </React.Fragment>
+            ),
+          }))}
+        ></TableDefault>
+      ) : (
+        <ErrorSummary
+          id="error-sum"
+          heading="You have no Appointments scheduled"
+          description="Head onto the 'Book an Appointment' page."
+        />
+      )}
       <FooterDefault></FooterDefault>
     </div>
   );

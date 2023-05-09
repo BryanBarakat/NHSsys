@@ -1,13 +1,15 @@
+/* Produced by Bryan Naoum Barakat student w18484023 */
+
 .error-msg-container {
   position: absolute;
   left: 50%;
   top: 45%;
+  z-index: 12;
   transform: translate(-50%, -50%);
   width: fit-content;
   padding: 50px;
-  background-color: bisque;
-  border: 2px solid black;
-  white-space: nowrap;
+  background-color: #e6b8b7;
+  border: 2px solid #ae4c4b;
 }
 
 .error-msg-container h1 img {
@@ -30,4 +32,18 @@
 
 .error-msg-container h1 {
   font-size: 30px;
+  color: #ae4c4b;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.error-msg-container p {
+  font-size: 20px;
+  color: #7d2c2b;
+  margin: 20px 0 0 0;
+  padding: 0;
+  line-height: 1.5;
+  max-width: 500px;
 }

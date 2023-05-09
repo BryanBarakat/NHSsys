@@ -112,11 +112,6 @@ export const SignIn = () => {
           <Button type="submit" id="sign-in-button">
             Sign In
           </Button>
-          {/* <Select id="select-sign-in">
-            <option>Patient</option>
-            <option>Doctor</option>
-            <option>Admin</option>
-          </Select> */}
         </div>
       </form>
       {Warning && (

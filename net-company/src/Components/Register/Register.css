@@ -1,3 +1,5 @@
+/* Produced by Bryan Naoum Barakat student w18484023 */
+
 .registration-input-container {
   position: absolute;
   left: 50%;
@@ -21,7 +23,8 @@
   width: 35vw;
 }
 
-label span {
+label span,
+p span {
   color: red;
 }
 

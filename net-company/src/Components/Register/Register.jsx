@@ -1,3 +1,5 @@
+//Produced by Bryan Naoum Barakat student w18484023
+
 import React, { useState } from "react";
 import TopNav from "@govuk-react/top-nav";
 import Input from "@govuk-react/input";
@@ -120,7 +122,9 @@ export const Register = () => {
               name="postcode_label"
             ></Input>
           </div>
-          <p>Or</p>
+          <p>
+            Or <span>*</span>
+          </p>
           <div className="NHS-numb-register">
             <Label htmlFor="NHS_label">NHS Number</Label>
             <Input
@@ -172,7 +176,7 @@ export const Register = () => {
         </div>
         <div className="password-registration">
           <Label htmlFor="pass_reg_label">
-            Password <span>*</span>
+            Password <span>*</span> &nbsp; (10 characters minimum)
           </Label>
           <Input
             type="password"

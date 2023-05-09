@@ -33,9 +33,10 @@
   font-family: "GDS Transport semi-bold";
   position: absolute;
   top: 20%;
-  left: 20%;
+  left: 10vw;
   transform: translate(-50%, -50%);
   color: #303030;
+  font-size: 22px;
 }
 
 #back-link-privacy:hover {

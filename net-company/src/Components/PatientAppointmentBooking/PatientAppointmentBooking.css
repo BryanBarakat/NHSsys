@@ -1,3 +1,5 @@
+/* Produced by Bryan Naoum Barakat student w18484023 */
+
 .availabilities-patient-apps {
   position: absolute;
   top: 50%;
@@ -21,6 +23,34 @@
   font-size: 60px;
 }
 
+.propa-booking span:nth-child(1) {
+  font-weight: 100;
+  font-size: 40px;
+}
+
+.propa-booking section {
+  width: 30vw;
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+}
+
+.propa-booking {
+  font-size: 24px;
+  color: #fff;
+  background-color: #1d70b8;
+  height: 60vh;
+  width: 40vw;
+  padding-left: 60px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-left: 30px solid #0088ff;
+  border-bottom: 26px solid #0088ff;
+  position: absolute;
+  right: 0;
+  top: 46%;
+  transform: translateY(-50%);
+}
+
 .doctors-app {
   display: flex;
   flex-direction: column;
@@ -36,7 +66,7 @@
 .doctors-date-time {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .doctors-date-time input {
@@ -58,9 +88,9 @@
 }
 
 .doctors-date-time .time-app {
-  width: 30vw;
+  width: 31vw;
   padding: 10px;
-  border: 2px solid black;
+  margin-left: -3px;
 }
 
 .doctors-date-time label {

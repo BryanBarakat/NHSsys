@@ -1,3 +1,5 @@
+/* Produced by Bryan Naoum Barakat student w18484023 */
+
 .table-default-container {
   position: absolute;
   left: 50%;
@@ -8,9 +10,11 @@
 table {
   display: block;
   overflow-y: scroll;
-  max-height: 44vh;
+  max-height: 70vh;
   color: #fff;
   border-radius: 10px;
+  max-width: 90vw;
+  margin: 0 auto;
 }
 
 ::-webkit-scrollbar {
@@ -36,7 +40,7 @@ th {
   border-bottom: 2px solid #303030;
   font-size: 24px;
   background-color: #0088ff;
-  padding: 20px 80px 20px 80px;
+  padding: 30px 180px 30px 180px;
   white-space: nowrap;
 }
 

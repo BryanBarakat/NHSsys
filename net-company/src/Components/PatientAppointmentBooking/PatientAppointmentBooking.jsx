@@ -1,9 +1,11 @@
+//Produced by Bryan Naoum Barakat student w18484023
+
 import React, { useEffect, useState } from "react";
 import NavBarDefault from "../NavBarDefault/NavBarDefault";
 import FooterDefault from "../FooterDefault/FooterDefault";
 import Button from "@govuk-react/button";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import "./PatientAppointmentBooking.css";
 
@@ -163,6 +165,20 @@ export const PatientAppointmentBooking = () => {
             <Button type="submit">Register</Button>
           </div>
         </form>
+      </div>
+      <div className="propa-booking">
+        <section>
+          <span>Book an appointment now !</span> <br /> <br />
+          <span>
+            Note that some hours may not be visible due to the doctor's
+            availability.
+          </span>
+          <br />
+          <br />
+          <Link to={`/profile/${key}`}>
+            <Button>Back to Profile</Button>
+          </Link>
+        </section>
       </div>
       {Warning && (
         <ErrorMessage onClick={handleWarning} message={warningMessage} />

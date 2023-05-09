@@ -1,3 +1,5 @@
+//Produced by Bryan Naoum Barakat student w18484023
+
 import React from "react";
 import TopNav from "@govuk-react/top-nav";
 import Button from "@govuk-react/button";
@@ -20,6 +22,9 @@ export const Landing = () => {
           <Button>Register Now</Button>
         </Link>
       </div>
+      <div className="block-landing"></div>
+      <div className="block-landing2"></div>
+      <div className="block-landing3"></div>
       <FooterDefault></FooterDefault>
     </div>
   );

@@ -1,8 +1,14 @@
+/* Produced by Bryan Naoum Barakat student w18484023 */
+
 .medical-recs-container {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 54%;
   transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .input-med-recs {
@@ -10,6 +16,13 @@
   flex-direction: row;
   align-items: center;
   gap: 40px;
+  margin-bottom: 20px;
+}
+
+.input-med-recs label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
 }
 
 .input-med-recs .full-name-med-recs,
@@ -20,13 +33,24 @@
   gap: 5px;
 }
 
+.input-med-recs input {
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 14px;
+  color: #333;
+  width: 200px;
+  height: 30px;
+}
+
 .health-conditions-med-recs table {
   font-family: "GDS Transport full-light";
   border-collapse: collapse;
   width: 100%;
   max-width: 90vw;
   margin: 0 auto;
-  font-size: 8px;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 .health-conditions-med-recs table th,
@@ -39,4 +63,5 @@
 .health-conditions-med-recs table th {
   background-color: #0088ff;
   font-weight: bold;
+  color: #fff;
 }
