@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavBarDefault } from "../NavBarDefault/NavBarDefault";
 import Input from "@govuk-react/input";
 import Button from "@govuk-react/button";
@@ -90,12 +90,11 @@ export const PrivacySecurity = () => {
     e.preventDefault();
     axios
       .delete("http://localhost/PHP/enquiry/test.php", {
-        data: [items, currButton, k, current_user],
+        data: [items, currButton, k, current_user, user_nhs_number],
       })
       .then((response) => {
         console.log(response);
         if (response.data.message == "Changes successfully made!") {
-          // setCurrButton("");
           history("/");
         }
       })
@@ -149,7 +148,6 @@ export const PrivacySecurity = () => {
                 name="postcode_label_priv"
               ></Input>
             </div>
-            {current_user == "patient" && <p>Or</p>}
             {current_user == "patient" && (
               <div className="NHS-numb-privacys">
                 <Label htmlFor="NHS-label">NHS Number</Label>

@@ -55,3 +55,8 @@
   a:hover {
   border-bottom: 4px solid #fff;
 }
+
+.edit-changes-doc,
+.submit-changes-med-rec-neo {
+  visibility: hidden;
+}

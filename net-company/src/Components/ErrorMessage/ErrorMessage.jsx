@@ -1,10 +1,12 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import images and dependencies
 import React from "react";
 import Warning from "../../assets/warning.png";
 import CloseTab from "../../assets/close.png";
 import "./ErrorMessage.css";
 
+//custom error message
 export const ErrorMessage = ({ message, onClick }) => {
   return (
     <div className="error-msg-container">

@@ -1,5 +1,6 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import images and dependencies
 import React, { useState, useEffect } from "react";
 import "./MedicalRecords.css";
 
@@ -22,10 +23,6 @@ export const MedicalRecords = () => {
       newArray[index][key] = newValue;
       return newArray;
     });
-    localStorage.setItem(
-      "med-rec-history",
-      JSON.stringify(array_of_vaccinations)
-    );
   };
 
   return (

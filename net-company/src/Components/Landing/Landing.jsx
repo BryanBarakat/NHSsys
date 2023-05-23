@@ -1,5 +1,6 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import images and dependencies
 import React from "react";
 import TopNav from "@govuk-react/top-nav";
 import Button from "@govuk-react/button";

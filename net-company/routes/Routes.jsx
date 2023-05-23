@@ -1,5 +1,6 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import components and dependencies
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "../src/Components/SignIn/SignIn";
 import Register from "../src/Components/Register/Register";
@@ -14,6 +15,7 @@ import PatientAppointments from "../src/Components/PatientAppointments/PatientAp
 import AdminAppointments from "../src/Components/AdminAppointments/AdminAppointments";
 import DoctorPatientMedRecMain from "../src/Components/DoctorPatientMedRecMain/DoctorPatientMedRecMain";
 
+//routes constant variable containing all URL routes, which works with the help of React Router
 export const routes = (
   <BrowserRouter>
     <Routes>

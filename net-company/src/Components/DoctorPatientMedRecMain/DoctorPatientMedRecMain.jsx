@@ -17,6 +17,7 @@ export const DoctorPatientMedRecMain = () => {
   const [apps, setApps] = useState([]);
   const chosen_record_email = localStorage.getItem("chosen_patient_records");
   const [clickedItem, setClickedItem] = useState(false);
+  const [loadContent, setLoadContent] = useState(false);
   let history = useNavigate();
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export const DoctorPatientMedRecMain = () => {
         data: [current_user, curr_email_user],
       })
       .then((response) => {
+        console.log(localStorage.getItem("med-rec-history"));
         if (response.data.appointments) {
           setApps(response.data.appointments);
         }
@@ -32,6 +34,9 @@ export const DoctorPatientMedRecMain = () => {
       .catch((error) => {
         console.log(error);
       });
+    setTimeout(() => {
+      setLoadContent(true);
+    }, 50);
   }, []);
 
   useEffect(() => {
@@ -44,6 +49,8 @@ export const DoctorPatientMedRecMain = () => {
           "med-rec-history",
           JSON.stringify(response.data.array_of_vaccinations)
         );
+        console.log(clickedItem);
+        console.log(response);
         localStorage.setItem("chosen_person", response.data.chosen_person);
         // setChosenPerson(response.data.chosen_person);
       })
@@ -77,39 +84,46 @@ export const DoctorPatientMedRecMain = () => {
           <img src={SearchLogo}></img>
         </span>
       </div>
-      {apps.length > 0 ? (
-        <TableDefault
-          objects={["Patient", "Postcode or NHS number", " "]}
-          listOfObjects={apps.map((el, index) => ({
-            patient: `${el.patient_first_name} ${el.patient_last_name}`,
-            postcode: `${el.postcode}`,
-            NHSnumber: `${el.nhs_number}`,
-            cancel: (
-              <React.Fragment>
-                <Button
-                  onClick={() => {
-                    localStorage.setItem(
-                      "chosen_patient_records",
-                      el.patient_email
-                    );
-                    navigateToUser();
-                    setClickedItem(true);
-                  }}
-                  type="button"
-                  key={index}
-                >
-                  Select
-                </Button>
-              </React.Fragment>
-            ),
-          }))}
-        ></TableDefault>
+      {console.log(apps)}
+      {loadContent ? (
+        apps.length > 0 ? (
+          <TableDefault
+            objects={["Patient", "Postcode or NHS number", " "]}
+            listOfObjects={apps.map((el, index) => ({
+              patient: `${el.patient_first_name} ${el.patient_last_name}`,
+              postcode: `${el.postcode}`,
+              NHSnumber: `${el.nhs_number}`,
+              cancel: (
+                <React.Fragment>
+                  <Button
+                    onClick={() => {
+                      setClickedItem(true);
+                      localStorage.setItem(
+                        "chosen_patient_records",
+                        el.patient_email
+                      );
+                      setTimeout(() => {
+                        navigateToUser();
+                      }, 100);
+                    }}
+                    type="button"
+                    key={index}
+                  >
+                    Select
+                  </Button>
+                </React.Fragment>
+              ),
+            }))}
+          ></TableDefault>
+        ) : (
+          <ErrorSummary
+            id="error-sum"
+            heading="There are no Appointments scheduled"
+            description="Wait for new customers to sign up."
+          />
+        )
       ) : (
-        <ErrorSummary
-          id="error-sum"
-          heading="There are no Appointments scheduled"
-          description="Wait for new customers to sign up."
-        />
+        []
       )}
       <FooterDefault></FooterDefault>
     </div>

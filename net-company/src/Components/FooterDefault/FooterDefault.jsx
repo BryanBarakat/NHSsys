@@ -1,5 +1,6 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import images and dependencies
 import React from "react";
 import { Footer } from "govuk-react";
 import "./FooterDefault.css";

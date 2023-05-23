@@ -77,7 +77,7 @@ export const PatientAppointmentBooking = () => {
         data: [user_email, chosenDoctor, doctor, timing, date],
       })
       .then((response) => {
-        if (response.data.message == "Appointment successfully Scheduled!") {
+        if (response.data.message == "Appointment successfully scheduled!") {
           history(`/patient-appointments-list/${key}`);
         } else {
           setWarningMessage(response.data.message);
@@ -128,7 +128,7 @@ export const PatientAppointmentBooking = () => {
                 type="date"
                 id="date-field"
                 name="date-field"
-                min="2023-05-08"
+                min="2023-05-25"
               ></input>
             </div>
             <div className="time-app">

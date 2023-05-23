@@ -1,8 +1,10 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import images and dependencies
 import React from "react";
 import "./TableDefault.css";
 
+//table format, colors and characteristics
 export const TableDefault = ({ objects, listOfObjects }) => {
   return (
     <div className="table-default-container">

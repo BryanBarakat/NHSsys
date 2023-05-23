@@ -1,5 +1,6 @@
 //Produced by Bryan Naoum Barakat student w18484023
 
+//import images and dependencies
 import React, { useState } from "react";
 import TopNav from "@govuk-react/top-nav";
 import Input from "@govuk-react/input";
@@ -12,7 +13,10 @@ import Label from "@govuk-react/label";
 import "./Register.css";
 
 export const Register = () => {
+  //navigation to other pages using useNavigate()
   let history = useNavigate();
+
+  //registration details stored -- its state
   const [Registration, setRegistration] = useState({
     first_name_label: "",
     last_name_label: "",
@@ -24,20 +28,26 @@ export const Register = () => {
     patient_gender: "Male",
     patient_type: "patient",
   });
+
+  //warning message state
   const [Warning, setWarning] = useState(false);
 
+  //warning custom message state
   const [warningMessage, setWarningMessage] = useState(
     "Please fill in the required fields"
   );
 
+  //input change handling using event target names and values of HTML tags
   const handleChange = (e) => {
     setRegistration({ ...Registration, [e.target.name]: e.target.value });
   };
 
+  //handle warning state whenever wrong input was inserted
   const handleWarning = () => {
     setWarning(false);
   };
 
+  //post request method to create and register the new user to then add into the database -- on click of submit type button of the form
   function postUser(e) {
     e.preventDefault();
     const data = {
@@ -122,11 +132,10 @@ export const Register = () => {
               name="postcode_label"
             ></Input>
           </div>
-          <p>
-            Or <span>*</span>
-          </p>
           <div className="NHS-numb-register">
-            <Label htmlFor="NHS_label">NHS Number</Label>
+            <Label htmlFor="NHS_label">
+              NHS Number <span>*</span>
+            </Label>
             <Input
               onChange={(e) => handleChange(e)}
               value={Registration.NHS_label}

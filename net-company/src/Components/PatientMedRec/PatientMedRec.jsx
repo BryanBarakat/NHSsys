@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FooterDefault } from "../FooterDefault/FooterDefault";
 import { NavBarDefault } from "../NavBarDefault/NavBarDefault";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ import "./PatientMedRec.css";
 export const PatientMedRec = () => {
   const key = localStorage.getItem("id_user");
   const chosen_record_email = localStorage.getItem("user_email");
+  const [showContent, setShowContent] = useState("");
   const get_med_rec = localStorage.getItem("med-rec-history");
 
   useEffect(() => {
@@ -27,6 +28,9 @@ export const PatientMedRec = () => {
       .catch((error) => {
         console.log(error);
       });
+    setTimeout(() => {
+      setShowContent(true);
+    }, 100);
   }, []);
 
   return (
@@ -43,14 +47,18 @@ export const PatientMedRec = () => {
           <h1>My Medical Records</h1>
         </div>
       </div>
-      {get_med_rec != "[]" ? (
-        <MedicalRecords></MedicalRecords>
+      {showContent ? (
+        get_med_rec != "[]" ? (
+          <MedicalRecords></MedicalRecords>
+        ) : (
+          <ErrorSummary
+            id="error-sum"
+            heading="No vaccination history"
+            description="Head onto the 'Book an Appointment' page to schedule your first vaccine."
+          />
+        )
       ) : (
-        <ErrorSummary
-          id="error-sum"
-          heading="No vaccination history"
-          description="Head onto the 'Book an Appointment' page to schedule your first vaccine."
-        />
+        []
       )}
       <FooterDefault></FooterDefault>
     </div>

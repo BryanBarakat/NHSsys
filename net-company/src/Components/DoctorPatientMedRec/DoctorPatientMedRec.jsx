@@ -144,7 +144,9 @@ export const DoctorPatientMedRec = () => {
         </div>
         {current_user == "doctor" && (
           <div className="title-doc-patient-med-rec-buttons">
-            <Button onClick={handleEdit}>Edit</Button>
+            <div className="edit-changes-doc">
+              <Button onClick={handleEdit}>Edit</Button>
+            </div>
             <Button onClick={addRow}>Add a Vaccine</Button>
             <form
               onSubmit={(e) => putInfo(e)}
