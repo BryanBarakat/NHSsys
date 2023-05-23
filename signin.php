@@ -78,7 +78,7 @@ switch($method) {
                 $_SESSION['user_type'] = $row['user_type'];
                 $response = ['status' => 1, 'message' => 'Login successful.', 'patient_id' => $row['doctor_id'], 'patient_first_name' => $row['doctor_first_name'],
                 'patient_last_name' => $row['doctor_last_name'],
-                'patient_email' => $row['doctor_email'],'patient_password' => $row['doctor_password'], 'user_type' => $_SESSION["user_type"]];
+                'patient_email' => $row['doctor_email'],'patient_password' => $row['doctor_password'], 'user_type' => $_SESSION["user_type"],'patient_postcode' => $row['doctor_postcode']];
             }
             elseif($result3->num_rows != 0){
                 $row = $result3->fetch_assoc();
@@ -90,10 +90,10 @@ switch($method) {
                 $_SESSION['user_type'] = $row['user_type'];
                 $response = ['status' => 1, 'message' => 'Login successful.', 'patient_id' => $row['admin_id'], 'patient_first_name' => $row['admin_first_name'],
                 'patient_last_name' => $row['admin_last_name'],
-                'patient_email' => $row['admin_email'],'patient_password' => $row['admin_password'], 'user_type' => $_SESSION["user_type"]];
+                'patient_email' => $row['admin_email'],'patient_password' => $row['admin_password'], 'user_type' => $_SESSION["user_type"],'patient_postcode' => $row['admin_postcode']];
             }
             // Verify password
-            if (($result -> num_rows != 0 && !password_verify($patient_password,$stored_password)) || (($result2-> num_rows != 0 || $result3-> num_rows != 0) && $patient_password != $stored_password)) {
+            if (($result -> num_rows != 0 && !password_verify($patient_password,$stored_password)) || (($result2-> num_rows != 0 || $result3-> num_rows != 0) && ($patient_password != $stored_password && !password_verify($patient_password,$stored_password)))) {
                 // Incorrect password
                 $response = ['status' => 0, 'message' => 'Invalid login credentials.'];
                 session_destroy();
